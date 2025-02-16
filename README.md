@@ -1,173 +1,100 @@
-### Portfolio Website
+# Open Source Portfolio Project with AI Chatbot
 
-# 🤖 AI-Powered Portfolio Website with Interactive Chatbot 
+**A modular web portfolio with integrated AI chatbot** designed for students and developers to showcase skills while learning modern full-stack development. Built with Flask, LangChain, and responsive CSS.
 
-![Project Demo](https://via.placeholder.com/800x400.png?text=Portfolio+Chatbot+Demo)  
-*(Replace with your actual demo GIF/video)*
-
-A smart portfolio website that lets visitors chat with an AI version of you! Perfect for students/job seekers to showcase skills and handle FAQs through an intelligent chatbot.
-
-## 🌈 Key Features
-- **Interactive Portfolio** with projects/experience sections  
-- **AI Twin Chatbot** trained on your resume (PDF)  
-- **Floating Chat Interface** with animations  
-- **RAG System** for accurate resume-based answers  
-- **Mobile Responsive** design  
-
-## 🧩 Project Structure
-portfolio-chatbot/
-├── app.py # Flask backend & AI logic
-├── script.js # Chat interactions & animations
-├── style.css # All styling rules
-├── index.html # Main portfolio content
+## Project Structure
+portfolio-project/
+├── static/
+│ ├── css/
+│ │ └── style.css # Responsive styling & chatbot UI
+│ └── js/
+│ └── script.js # Chat interactions & animations
+├── templates/
+│ └── index.html # Main portfolio content
+├── app.py # Flask backend & AI integration
 ├── assets/
-│ └── chatbot_data.pdf # Your resume (add yours!)
+│ └── chatbot_data.pdf # Your resume/CV data
 ├── requirements.txt # Python dependencies
-└── .env # API keys (not committed)
 
-text
+## Key Features
 
-## 🚀 Quick Start
+**🤖 Smart Resume Chatbot**
+- Answers questions using your resume data through RAG architecture
+- Casual conversational style (`app.py` lines 28-32)
+- Context-aware responses under 50 words
 
-### 1. Clone & Setup
-git clone https://github.com/yourusername/portfolio-chatbot.git
-cd portfolio-chatbot
+**🎨 Modern UI Components**
+- Floating chatbot icon with animation (`style.css` lines 314-339)
+- Responsive hamburger menu (`script.js` lines 1-21)
+- Project cards with hover effects
+
+**🔧 Easy Customization**
+To modify chatbot personality (app.py)
+prompt = ChatPromptTemplate.from_template("""
+Act like a [YOUR_ROLE] searching for [JOB_TYPE].
+Keep responses under 50 words.
+{context}
+Question: {input}
+""")
+
+## Setup Guide
+
+1. **Install dependencies**
 pip install -r requirements.txt
 
-text
+2. **Configure API keys**
+In app.py
+os.environ["GROQ_API_KEY"] = "your_api_key_here"
 
-### 2. Add Your Resume
-1. Save your resume as `assets/chatbot_data.pdf`  
-2. Get [Groq API key](https://console.groq.com/)  
-3. Create `.env` file:
-GROQ_API_KEY="your-api-key-here"
 
-text
+3. **Add your resume**
+- Replace `assets/chatbot_data.pdf` with your resume
+- The AI will automatically process it[
 
-### 3. Launch!
-flask run --port 5000
+4. **Run development server**
+flask run --host=0.0.0.0 --port=5000
 
-text
-Open `http://localhost:5000` in your browser.
+## Customization Options
 
-## 🛠️ Core Components Explained
-
-### 🤖 AI Backend (`app.py`)
-Load and process resume
-resume_loader = PyPDFLoader("assets\chatbot_data.pdf")
-docs = resume_loader.load()
-
-Create AI personality
-prompt = ChatPromptTemplate.from_template("""
-Act like the resume owner - be enthusiastic, casual, and keep answers under 50 words!
-{context}
-Question: {input}
-""")
-
-Build RAG system
-retriever = vectors.as_retriever()
-document_chain = create_stuff_documents_chain(llm, prompt)
-retrieval_chain = create_retrieval_chain(retriever, document_chain)
-
-text
-
-### 💬 Chat Interface (`script.js`)
-async function sendMessage() {
-let userInput = document.getElementById("user-input").value;
-
-// Show user message
-messages.innerHTML += <div class="user-message">${userInput}</div>;
-
-// Get AI response
-let response = await fetch("http://localhost:5000/chat", {
-method: "POST",
-headers: { "Content-Type": "application/json" },
-body: JSON.stringify({ query: userInput })
-});
-
-// Display bot response
-let data = await response.json();
-messages.innerHTML += <div class="bot-message">${data.answer}</div>;
+**UI Themes**
+/* Change color scheme in style.css /
+:root {
+--primary-color: #2A2A2A; / Dark gray /
+--accent-color: #4CAF50; / Green /
+--chatbot-bg: #FFFFFF; / White background */
 }
 
-text
-
-### 🎨 Styling Tricks (`style.css`)
-/* Floating animation */
-#chatbot-icon {
-animation: floatUpDown 2s infinite ease-in-out;
+**Chatbot Features**
+// Add new UI interactions in script.js
+function toggleDarkMode() {
+document.body.classList.toggle("dark-theme");
 }
 
-@keyframes floatUpDown {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-10px); }
-}
 
-/* Chat message bubbles */
-.user-message {
-background: #d1e7dd;
-border-radius: 15px 15px 0 15px;
-}
+## Contributing
 
-.bot-message {
-background: #f0f0f0;
-border-radius: 15px 15px 15px 0;
-}
+We welcome contributions! Please follow our guidelines:
 
-text
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
 
-## 🧑💻 Customization Guide
+**Report issues** for:
+- Broken links
+- Responsive design bugs
+- Chatbot response errors
 
-### 1. Update Portfolio Content
-Edit **index.html** sections:
-<!-- About Section --> <section id="about"> <h1 class="title">Data Scientist</h1> <div class="section-container"> <!-- Update your bio here --> <p>When I’m not crushing it in the gym, I’m crushing complex data problems...</p> </div> </section> ```
-2. Modify Chatbot Personality
-Adjust the AI's tone in app.py:
+## Learning Resources
 
-text
-# Current personality settings
-prompt = ChatPromptTemplate.from_template("""
-Act enthusiastic! Use student slang when appropriate.
-Keep answers under 3 sentences. Add emojis occasionally 😊
+- [Open Source Best Practices](https://opensauced.pizza)
+- [LangChain Documentation](https://python.langchain.com)
 
-{context}
-Question: {input}
-""")
-3. Add New Features
-Example: Add Dark Mode
+**Built with:**
+- Flask (Python backend)
+- LangChain (AI integration)
+- HuggingFace (NLP models)
+- Groq (LLM API)
 
-Add toggle button in index.html:
 
-text
-<button id="dark-mode-toggle" class="btn">🌓 Toggle Dark Mode</button>
-Add JavaScript in script.js:
-
-text
-document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-});
-Style in style.css:
-
-text
-.dark-mode {
-  background-color: #1a1a1a;
-  color: white;
-}
-🐛 Common Issues & Fixes
-Issue	Solution
-Chat not responding	Check Flask server is running on port 5000
-API errors	Verify .env file has valid Groq API key
-Styling broken	Clear browser cache + reload
-PDF not loading	Ensure resume is in /assets as chatbot_data.pdf
-🤝 Contributing
-Want to improve this project?
-
-Fork the repository
-
-Create a feature branch (git checkout -b cool-feature)
-
-Commit changes (git commit -m 'Add awesome feature')
-
-Push to branch (git push origin cool-feature)
-
-Open a Pull Request
