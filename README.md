@@ -2,23 +2,16 @@
 
 **A modular web portfolio with integrated AI chatbot** designed for students and developers to showcase skills while learning modern full-stack development. Built with Flask, LangChain, and responsive CSS.
 
-## Project Structure
-
 # Project Structure
 
 | Directory/File         | Description                              |
 |------------------------|------------------------------------------|
 | `portfolio-project/`   | Root directory of the project           |
-| `static/`             | Contains static assets like CSS and JS  |
-| `static/css/`         | Directory for CSS files                 |
-| `static/css/style.css` | Responsive styling & chatbot UI         |
-| `static/js/`          | Directory for JavaScript files          |
-| `static/js/script.js` | Chat interactions & animations          |
-| `templates/`          | Contains HTML templates                 |
-| `templates/index.html` | Main portfolio content                  |
+| `style.css` | Responsive styling & chatbot UI         |
+| `script.js` | Chat interactions & animations          |
+| `index.html` | Main portfolio content                  |
 | `app.py`             | Flask backend & AI integration           |
-| `assets/`            | Directory for additional resources       |
-| `assets/chatbot_data.pdf` | Resume/CV data                     |
+| `chatbot_data.pdf` | Resume/CV data                     |
 | `requirements.txt`    | Python dependencies                      |
 
 
