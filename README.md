@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-### Portfolio Website
-=======
 # Open Source Portfolio Project with AI Chatbot
 
 **A modular web portfolio with integrated AI chatbot** designed for students and developers to showcase skills while learning modern full-stack development. Built with Flask, LangChain, and responsive CSS.
@@ -55,7 +52,7 @@ os.environ["GROQ_API_KEY"] = "your_api_key_here"
 
 3. **Add your resume**
 - Replace `assets/chatbot_data.pdf` with your resume
-- The AI will automatically process it[
+- The AI will automatically process it
 
 4. **Run development server**
 
@@ -105,6 +102,6 @@ We welcome contributions! Please follow our guidelines:
 - LangChain (AI integration)
 - HuggingFace (NLP models)
 - Groq (LLM API)
->>>>>>> 856ab87165d243ba2e438abc3c2a91f5af111347
+
 
 
