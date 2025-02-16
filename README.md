@@ -4,30 +4,7 @@
 
 ## Project Structure
 
-portfolio-project/
-
-├── static/
-
-│ ├── css/
-
-│ │ └── style.css # Responsive styling & chatbot UI
-
-│ └── js/
-
-│ └── script.js # Chat interactions & animations
-
-├── templates/
-
-│ └── index.html # Main portfolio content
-
-├── app.py # Flask backend & AI integration
-
-├── assets/
-
-│ └── chatbot_data.pdf # Your resume/CV data
-
-├── requirements.txt # Python dependencies
-├── requirements.txt # Python dependencies
+pportfolio-project/ ├── static/ │ ├── css/ │ │ └── style.css # Responsive styling & chatbot UI │ ├── js/ │ │ └── script.js # Chat interactions & animations ├── templates/ │ └── index.html # Main portfolio content ├── app.py # Flask backend & AI integration ├── assets/ │ └── chatbot_data.pdf # Your resume/CV data ├── requirements.txt # Python dependencies
 
 ## Key Features
 
