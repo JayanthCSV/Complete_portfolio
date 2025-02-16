@@ -4,7 +4,23 @@
 
 ## Project Structure
 
-pportfolio-project/ ├── static/ │ ├── css/ │ │ └── style.css # Responsive styling & chatbot UI │ ├── js/ │ │ └── script.js # Chat interactions & animations ├── templates/ │ └── index.html # Main portfolio content ├── app.py # Flask backend & AI integration ├── assets/ │ └── chatbot_data.pdf # Your resume/CV data ├── requirements.txt # Python dependencies
+# Project Structure
+
+| Directory/File         | Description                              |
+|------------------------|------------------------------------------|
+| `portfolio-project/`   | Root directory of the project           |
+| `static/`             | Contains static assets like CSS and JS  |
+| `static/css/`         | Directory for CSS files                 |
+| `static/css/style.css` | Responsive styling & chatbot UI         |
+| `static/js/`          | Directory for JavaScript files          |
+| `static/js/script.js` | Chat interactions & animations          |
+| `templates/`          | Contains HTML templates                 |
+| `templates/index.html` | Main portfolio content                  |
+| `app.py`             | Flask backend & AI integration           |
+| `assets/`            | Directory for additional resources       |
+| `assets/chatbot_data.pdf` | Resume/CV data                     |
+| `requirements.txt`    | Python dependencies                      |
+
 
 ## Key Features
 
