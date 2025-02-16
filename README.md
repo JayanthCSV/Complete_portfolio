@@ -3,17 +3,30 @@
 **A modular web portfolio with integrated AI chatbot** designed for students and developers to showcase skills while learning modern full-stack development. Built with Flask, LangChain, and responsive CSS.
 
 ## Project Structure
+
 portfolio-project/
+
 ├── static/
+
 │ ├── css/
+
 │ │ └── style.css # Responsive styling & chatbot UI
+
 │ └── js/
+
 │ └── script.js # Chat interactions & animations
+
 ├── templates/
+
 │ └── index.html # Main portfolio content
+
 ├── app.py # Flask backend & AI integration
+
 ├── assets/
+
 │ └── chatbot_data.pdf # Your resume/CV data
+
+├── requirements.txt # Python dependencies
 ├── requirements.txt # Python dependencies
 
 ## Key Features
@@ -30,6 +43,7 @@ portfolio-project/
 
 **🔧 Easy Customization**
 To modify chatbot personality (app.py)
+
 prompt = ChatPromptTemplate.from_template("""
 Act like a [YOUR_ROLE] searching for [JOB_TYPE].
 Keep responses under 50 words.
@@ -40,10 +54,12 @@ Question: {input}
 ## Setup Guide
 
 1. **Install dependencies**
+
 pip install -r requirements.txt
 
 2. **Configure API keys**
 In app.py
+
 os.environ["GROQ_API_KEY"] = "your_api_key_here"
 
 
@@ -52,11 +68,13 @@ os.environ["GROQ_API_KEY"] = "your_api_key_here"
 - The AI will automatically process it[
 
 4. **Run development server**
+
 flask run --host=0.0.0.0 --port=5000
 
 ## Customization Options
 
 **UI Themes**
+
 /* Change color scheme in style.css /
 :root {
 --primary-color: #2A2A2A; / Dark gray /
@@ -65,6 +83,7 @@ flask run --host=0.0.0.0 --port=5000
 }
 
 **Chatbot Features**
+
 // Add new UI interactions in script.js
 function toggleDarkMode() {
 document.body.classList.toggle("dark-theme");
