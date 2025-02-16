@@ -11,7 +11,8 @@
 | `script.js` | Chat interactions & animations          |
 | `index.html` | Main portfolio content                  |
 | `app.py`             | Flask backend & AI integration           |
-| `chatbot_data.pdf` | Resume/CV data                     |
+| `assets/`            | Directory for additional resources       |
+| `assets/chatbot_data.pdf` | Resume/CV data                     |
 | `requirements.txt`    | Python dependencies                      |
 
 
