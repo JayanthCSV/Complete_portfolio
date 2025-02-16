@@ -1,0 +1,8 @@
+flask
+langchain_groq
+langchain_openai
+langchain_community
+python-dotenv
+pypdf
+sentence-transformers
+faiss-cpu
